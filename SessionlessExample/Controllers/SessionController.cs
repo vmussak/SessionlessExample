@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Threading;
+using System.Web.Mvc;
 
 namespace SessionlessExample.Controllers
 {
@@ -6,6 +7,7 @@ namespace SessionlessExample.Controllers
     {
         public ActionResult Index(int index)
         {
+            Thread.Sleep(1000);
             return Content($"{index} - {Session["Session"]}, ");
         }
     }
